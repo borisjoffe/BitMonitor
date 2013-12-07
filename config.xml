@@ -1,6 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <widget xmlns="http://www.w3.org/ns/widgets" xmlns:tizen="http://tizen.org/ns/widgets" id="http://yourdomain/test" version="1.0.0" viewmodes="maximized">
     <tizen:application id="SXsYMYsnWP.test" package="SXsYMYsnWP" required_version="2.2"/>
+	<tizen:privilege name="http://tizen.org/privilege/push"/>
+	<access origin="https://01.push.samsungosp.com:8088" subdomains="true"/>
     <content src="index.html"/>
     <icon src="icon.png"/>
     <name>test</name>
