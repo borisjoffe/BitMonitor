@@ -26,7 +26,8 @@ sign:
 	web-signing -profile $(APPNAME):~/code/tizen-sdk/tools/ide/conf/profiles.xml
 
 package:
-	web-packaging $(APPNAME).wgt
+	mv $(APPNAME).wgt $(APPNAME).wgt.bak
+	web-packaging -o $(APPNAME).wgt
 
 install:
 	web-install -w $(APPNAME).wgt
