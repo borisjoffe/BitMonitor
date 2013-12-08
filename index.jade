@@ -44,6 +44,10 @@ html
 					| &nbsp;
 					span#coinbasePrice 
 
+			br
+			input(type="submit" value="Reload price" id="btn")
+			//input(type="submit" onclick="handleData" id="btn" value="Reload price") Reload
+
 			// Cross origin requests using JSONP
 			script.
 				function $(el) { return document.getElementById(el); }
@@ -53,16 +57,36 @@ html
 					$('coinbasePrice').innerHTML = price;
 				}
 
-				/*
-				$.ready(function() {
+				/* $.ready(function() {
 					$.getJSON('https://coinbase.com/api/v1/prices/sell?callback=handleData');
 					function handleData(data) {
 						var price = data['subtotal']['amount'];
 						$('#coinbasePrice').val(price);
 						alert(price);
 					}
-				});
-				*/
+				}); */
+				myCode = function() {}
+				window.addEventListener('load', function() {
+					$('btn').addEventListener('click', function() {
+						loadScript("https://coinbase.com/api/v1/prices/sell?callback=handleData", myCode);
+					}, false);
+				}, true);
+
+				function loadScript(url, callback) {
+				// adding the script tag to the head as suggested before
+					var head = document.getElementsByTagName('head')[0];
+					var script = document.createElement('script');
+					script.type = 'text/javascript';
+					script.src = url;
+
+					// then bind the event to the callback function 
+					// there are several events for cross browser compatibility
+					script.onreadystatechange = callback;
+					script.onload = callback;
+
+					// fire the loading
+					head.appendChild(script);
+				}
 
 			script(src="https://coinbase.com/api/v1/prices/sell?callback=handleData")
 
