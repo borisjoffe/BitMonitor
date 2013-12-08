@@ -57,5 +57,7 @@ run:
 	#web-run -i $1.$(APPNAME)
 	web-run -i $(APPID).$(APPNAME)
 
+ide:
+	$(TIZEN_SDK_HOME)/ide/startup.sh
 
 ORIGINAL_EMULATOR_OPTIONS=--skin-args width=720 height=1280 skin.path=$(TIZEN_SDK_HOME)/tools/emulator/skins/emul-general-3btn --qemu-args -drive file=$(TIZEN_SDK_DATA_HOME)/emulator-vms/vms/TizenTestEmulator/emulimg-TizenTestEmulator.x86,if=virtio,index=1 -boot c -append console=ttyS0 video=uvesafb:ywrap,720x1280-32@60 dpi=3160 ip=10.0.2.16::10.0.2.2:255.255.255.0::eth0:none 5 vm_name=TizenTestEmulator -serial file:$(TIZEN_SDK_DATA_HOME)/emulator-vms/vms/TizenTestEmulator/logs/emulator.klog -m 512 -M maru-x86-machine -net nic,model=virtio,macaddr=00:1A:92:0D:A3:C4 -soundhw all -usb -device virtio-touchscreen-pci -vga maru -bios bios.bin -L $(TIZEN_SDK_HOME)/tools/emulator/data/bios -kernel $(TIZEN_SDK_HOME)/tools/emulator/data/kernel/bzImage.x86 -net user -rtc base=utc -drive file=$(TIZEN_SDK_DATA_HOME)/emulator-vms/vms/TizenTestEmulator/swap-TizenTestEmulator.img,if=virtio,index=2 -enable-gl -device virtio-esm-pci -device virtio-hwkey-pci -max-touch-point 10
