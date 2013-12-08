@@ -12,6 +12,7 @@ var init = function () {
             tizen.application.getCurrentApplication().exit();
     });
 
+	/*
 	// Defines the data to be used when this process is launched by notification service.
 	var service = new tizen.ApplicationControl("http://tizen.org/appcontrol/operation/push_test");
 
@@ -27,6 +28,7 @@ var init = function () {
 
 	// Requests registration.
 	tizen.push.registerService(service, registerSuccessCallback, errorCallback);
+	*/
 };
 // window.onload can work without <body onload="">
 window.onload = init;

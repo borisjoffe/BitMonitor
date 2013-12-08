@@ -3,7 +3,7 @@ APPID=SXsYMYsnWP
 APPNAME=borisapp
 
 TIZEN_SDK_HOME=/home/boris/code/tizen-sdk
-TIZEN_SDK_TOOLS=/home/boris/code/tizen-sdk/tools
+TIZEN_SDK_TOOLS=$(TIZEN_SDK_HOME)/tools
 TIZEN_SDK_DATA_HOME=$(TIZEN_SDK_HOME)-data
 EMULATOR_PATH=$(TIZEN_SDK_DATA_HOME)/emulator-vms/vms/TizenTestEmulator
 #PATH=$(PATH):~/code/tizen-sdk/tools
